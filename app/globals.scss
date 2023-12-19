@@ -108,3 +108,216 @@ main.main {
   }
 }
 
+.hero-banner {
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  background-color: #a1151a;
+  position: relative;
+  margin-bottom: 150px;
+
+  .images {
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .image-1,
+    .image-2 {
+      background-repeat: no-repeat;
+      object-fit: cover;
+      border-radius: 10px;
+      z-index: 1;
+    }
+    .image-1 {
+      align-self: flex-start;
+      max-width: 480x;
+      width: 70%;
+    }
+    .image-2 {
+      align-self: flex-end;
+      transform: translateY(-30%);
+      max-width: 240x;
+      width: 35%;
+    }
+    div {
+      position: absolute;
+      content: "";
+      background-color: #d8b243;
+      border-radius: 16px;
+      max-width: 315px;
+      max-height: 320px;
+      width: 40%;
+      height: 40.5%;
+      aspect-ratio: 1;
+      display: block;
+      transform: translate(-20%, -50%);
+      top: 50%;
+      left: 50%;
+    }
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 281px;
+    width: 281px;
+    border-radius: 281px;
+    border: 3px dashed var(--Mustard, #d7b344);
+    background-image: url("/lines.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: -140px;
+    right: 40px;
+  }
+}
+
+.details {
+  width: 50%;
+
+  h1,
+  h2 {
+    color: #fff;
+    font-family: IvyPresto Display;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 108.4%;
+  }
+
+  p {
+    color: #fff;
+    font-family: Niveau Grotesk;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 132.9%; /* 23.922px */
+    letter-spacing: 0.18px;
+  }
+
+  button {
+    border-radius: 4px;
+    background: #d7b344;
+    width: 229px;
+    height: 60px;
+    flex-shrink: 0;
+  }
+}
+
+.details-section {
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  position: relative;
+  margin-top: -100px;
+  gap: 50px;
+
+  .image-container {
+    width: calc(50% - 25px);
+  }
+  img {
+    border-radius: 16px;
+    margin: 40px;
+    width: calc(100% - 80px);
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .details {
+    width: calc(50% - 25px);
+    h2,
+    p {
+      color: black;
+    }
+    p {
+      margin-top: 20px;
+      font-family: Gordita;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 166.4%;
+    }
+  }
+}
+
+.bullet-items-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  .details-bullet {
+    .image-container {
+    }
+    .details-container {
+      h3 {
+        color: var(--Black, #000);
+        text-align: center;
+        font-family: IvyPresto Display;
+        font-size: 37px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 132.9%; /* 49.173px */
+        letter-spacing: 0.37px;
+      }
+      .description {
+        color: var(--Black, #000);
+        text-align: center;
+        font-family: Niveau Grotesk;
+        font-size: 23px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 132.9%; /* 30.567px */
+        letter-spacing: 0.23px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          max-width: max-content;
+
+          &::after {
+            content: "";
+            background-image: url("/arrow-right.svg");
+            fill: #a1151a;
+            width: 8px;
+            display: block;
+            height: 15px;
+            background-repeat: no-repeat;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .bullet-items-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (max-width: 1120px) {
+  .hero-banner,
+  .details-section {
+    flex-direction: column-reverse;
+    width: 100%;
+    .images,
+    .details {
+      width: 100%;
+      max-width: 800px;
+    }
+  }
+  .details-section {
+    flex-direction: column;
+    .image-container {
+      width: calc(100% - 50px);
+    }
+  }
+}
