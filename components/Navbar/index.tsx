@@ -34,25 +34,29 @@ function Navbar() {
           <div className="menu-icon" onClick={toggleMenu} />
         </div>
         <nav className={showMenu ? "show" : ""}>
-          <Link href="/" className="nav-link active">
+          <Link href="/" className="nav-link active" aria-label="Home">
             Home
           </Link>
-          <Link href="/" className="nav-link">
+          <Link
+            href="/portfolio"
+            className="nav-link"
+            aria-label="Our Portfolio"
+          >
             Our Portfolio
           </Link>
-          <Link href="/" className="nav-link">
+          <Link href="/suppliers" className="nav-link" aria-label="Suppliers">
             Suppliers
           </Link>
-          <Link href="/" className="nav-link">
+          <Link href="/careers" className="nav-link" aria-label="Careers">
             Careers
           </Link>
-          <Link href="/" className="nav-link">
+          <Link href="/causes" className="nav-link" aria-label="Our Causes">
             Our Causes
           </Link>
-          <Link href="/" className="nav-link">
+          <Link href="/news" className="nav-link" aria-label="News">
             News
           </Link>
-          <Link href="/" className="nav-link">
+          <Link href="/about-us" className="nav-link" aria-label="About Us">
             About Us
           </Link>
         </nav>
