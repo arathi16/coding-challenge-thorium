@@ -1,5 +1,13 @@
-import styles from "./page.module.css";
+import BulletItems from "@/components/BulletItems";
+import DetailsSection from "@/components/DetailsSection";
+import HeroBanner from "@/components/HeroBanner";
 
 export default function Home() {
-  return <main className={styles.main}>Thorium</main>;
+  return (
+    <>
+      <HeroBanner />
+      <DetailsSection />
+      <BulletItems />
+    </>
+  );
 }
