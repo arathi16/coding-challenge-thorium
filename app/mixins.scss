@@ -1,0 +1,32 @@
+@mixin list-loop($className, $styleName, $offset: 4, $max: 50, $unit: "px") {
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} {
+      #{$styleName}: #{$i + $unit};
+    }
+    $i: $i + $offset;
+  }
+}
+
+// Flex Gap
+@include list-loop(".gap-", "gap");
+
+// Margins
+@include list-loop(".pt-", "padding-top");
+@include list-loop(".pr-", "padding-right");
+@include list-loop(".pb-", "padding-bottom");
+@include list-loop(".pl-", "padding-left");
+@include list-loop(".p-", "padding");
+
+// Paddings
+@include list-loop(".mt-", "margin-top");
+@include list-loop(".mr-", "margin-right");
+@include list-loop(".mb-", "margin-bottom");
+@include list-loop(".ml-", "margin-left");
+@include list-loop(".m-", "margin");
+
+@include list-loop(".bt-", "border-top", 1, 20);
+@include list-loop(".br-", "border-right", 1, 20);
+@include list-loop(".bb-", "border-bottom", 1, 20);
+@include list-loop(".bl-", "border-left", 1, 20);
+@include list-loop(".b-", "border", 1, 20);
