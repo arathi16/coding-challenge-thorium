@@ -1,13 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useCallback, useState } from "react";
 
 function Navbar() {
+  const [showMenu, setShowMenu] = useState(false);
+  const toggleMenu = useCallback(() => {
+    setShowMenu(!showMenu);
+  }, [showMenu]);
+
   return (
     <header className="header pt-12 pb-12 pl-48 pr-48 flex flex-between">
       <Image src="/logo.svg" height={66} width={66} alt="App Logo" />
-      <div>
-        <div className="flex flex-end mb-12 mt-8">
+      <div className="flex flex-col flex-center">
+        <div className="top-line flex flex-end item-center">
           <Image
             src="/social-icons.svg"
             height={20}
@@ -24,8 +31,9 @@ function Navbar() {
             />
             Login
           </div>
+          <div className="menu-icon" onClick={toggleMenu} />
         </div>
-        <nav>
+        <nav className={showMenu ? "show" : ""}>
           <Link href="/" className="nav-link active">
             Home
           </Link>
