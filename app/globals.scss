@@ -70,3 +70,41 @@ body {
   overflow-y: auto;
   background-color: black;
 }
+
+header.header {
+  height: 90px;
+  position: sticky;
+  top: 0;
+  max-width: 1440px;
+  background-color: #f4f2eb;
+  margin: 0 auto;
+  z-index: 100;
+}
+
+main.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: calc(100vh - 90px);
+  max-width: 1440px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.nav-link {
+  color: #000;
+  font-family: Niveau Grotesk;
+  font-size: 20.75px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 103.9%;
+  opacity: 0.6;
+  text-decoration: none;
+  padding: 0 20px;
+  &.active {
+    font-weight: 500;
+    opacity: 1;
+  }
+}
+
