@@ -135,17 +135,20 @@ main.main {
       object-fit: cover;
       border-radius: 10px;
       z-index: 1;
+      width: 35%;
+      height: auto;
     }
     .image-1 {
       align-self: flex-start;
       max-width: 480x;
       width: 70%;
+      aspect-ratio: 1.5;
     }
     .image-2 {
       align-self: flex-end;
       transform: translateY(-30%);
       max-width: 240x;
-      width: 35%;
+      aspect-ratio: 0.67;
     }
     div {
       position: absolute;
@@ -155,10 +158,10 @@ main.main {
       max-width: 315px;
       max-height: 320px;
       width: 40%;
-      height: 40.5%;
+      height: auto;
       aspect-ratio: 1;
       display: block;
-      transform: translate(-20%, -50%);
+      transform: translate(-20%, -60%);
       top: 50%;
       left: 50%;
     }
@@ -349,6 +352,16 @@ main.main {
       }
     }
   }
+
+  .hero-banner::after {
+    height: 20vw;
+    width: 20vw;
+    border-radius: 20vw;
+    bottom: -10vw;
+    background-size: contain;
+    padding: 20px;
+  }
+
   .hero-banner,
   .details-section {
     flex-direction: column-reverse;
@@ -362,7 +375,11 @@ main.main {
   .details-section {
     flex-direction: column;
     .image-container {
-      width: calc(100% - 50px);
+      width: 100%;
+      img {
+        width: 100%;
+        margin: 40px 0;
+      }
     }
   }
 }
